@@ -1,0 +1,30 @@
+GET http://localhost:5000/users
+
+
+###
+GET http://localhost:5000/users/ujang
+
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+   "name": "ujang",
+   "email": "asek@rocketmail.wosh",
+   "gender": "male"
+}
+
+
+###
+PATCH http://localhost:5000/users/64815c1b9ff294936697ef31
+Content-Type: application/json
+
+{
+   "name": "Samsudin",
+   "email": "samsu@rocketmail.wosh",
+   "gender": "male"
+}
+
+###
+DELETE http://localhost:5000/users/648477cffd28dbdbab6c268c
