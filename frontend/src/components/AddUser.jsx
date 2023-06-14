@@ -21,7 +21,7 @@ export const AddUser = () => {
                   w-[300px]' />
                </div>
             </div>
-            <div className='field-gender'>
+            <div className='field-gender-sections'>
                <label htmlFor="nama"> Gender </label>
                <div className='gender-options '>
                   <select name="gender-options" id="gender-options" className="w-[300px] shadow-lg rounded focus:bg-slate-200 p-2">
