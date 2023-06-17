@@ -15,6 +15,15 @@ export const UserList = () => {
       console.log(response.data)
    }
 
+   const deleteUser = async (id) => {
+         try {
+         await axios.delete(`http://localhost:5000/users/${id}`)
+         console.log(`data has been deleted: ${id}`)
+         getUsers()
+      } catch(err) {
+         console.log(err)
+      }
+   }
 
    return (
       <div className='table mt-10'>
@@ -37,13 +46,22 @@ export const UserList = () => {
                      <td>{user.email}</td>
                      <td>{user.gender}</td>
                      <td>
-                        <Button editButton />
-                        <Button deleteButton />
+                        <Button editButton to={`edit/${user._id}`}>
+                           Edit
+                        </Button>
+                        <Button 
+                           deleteButton 
+                           onClick={() => deleteUser(user._id) }>
+                              Delete
+                           </Button>
                      </td>
                   </tr>
                   ))}
                </tbody>
             </table>
+            <Button editButton to={`/add`} >
+               Add new data
+            </Button> 
       </div>
    )
 }
